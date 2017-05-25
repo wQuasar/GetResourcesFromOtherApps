@@ -15,11 +15,11 @@ try {
             "<package_name>");
 
     // Get the actual resource
-    Drawable drawable = res.getDrawable(iconResId, getTheme());
+    Drawable drawable = res.getDrawable(iconResId, getTheme()); // <- Will throw NotFoundException
     
     // -- Do awesome stuff with drawable here --
 
-} catch (PackageManager.NameNotFoundException e) {
+} catch (PackageManager.NameNotFoundException | Resources.NotFoundException e) {
     // Herp Derp
     e.printStackTrace();
 }
